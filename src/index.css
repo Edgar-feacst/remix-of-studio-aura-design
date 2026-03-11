@@ -1,0 +1,202 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 15% 8%;
+    --foreground: 0 0% 98%;
+    
+    --card: 210 15% 10%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 210 15% 10%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 260 70% 65%; /* Morado metalizado */
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 210 15% 12%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 210 15% 12%;
+    --muted-foreground: 210 10% 60%;
+    
+    --accent: 280 60% 70%; /* Morado claro metalizado */
+    --accent-foreground: 210 15% 8%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 210 15% 15%;
+    --input: 210 15% 15%;
+    --ring: 260 70% 65%;
+    
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(260 70% 65%), hsl(280 60% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(250 15% 12%));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)), hsl(250 15% 12%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(260 70% 65% / 0.3);
+    --shadow-glow: 0 0 40px hsl(260 70% 65% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    cursor: none;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased overflow-x-hidden font-sans;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    cursor: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+  
+  a, button {
+    cursor: none;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .bg-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-sm bg-card/50 border border-border shadow-lg;
+    background: var(--gradient-card);
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .corporate-gradient {
+    background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 50%, #C084FC 100%);
+  }
+  
+  .section-gradient {
+    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(210 15% 10%) 100%);
+  }
+
+  .perspective-800 {
+    perspective: 800px;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+  
+  /* Custom Cursor */
+  .custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: hsl(var(--primary));
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    mix-blend-mode: difference;
+  }
+  
+  .custom-cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid hsl(var(--primary) / 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Parallax effects */
+  .parallax-slow {
+    transform: translateY(calc(var(--scroll-progress, 0) * -50px));
+    transition: transform 0.1s ease-out;
+  }
+  
+  .parallax-medium {
+    transform: translateY(calc(var(--scroll-progress, 0) * -100px));
+    transition: transform 0.1s ease-out;
+  }
+  
+  .parallax-fast {
+    transform: translateY(calc(var(--scroll-progress, 0) * -150px));
+    transition: transform 0.1s ease-out;
+  }
+  
+  /* Reveal animations */
+  .reveal-text {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .reveal-text.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Magnetic effect */
+  .magnetic {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}

@@ -1,0 +1,190 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-scrolled {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  background: hsl(var(--background) / 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid hsl(var(--primary) / 0.1);
+}
+
+.navbar-transparent {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  background: transparent;
+}
+
+.navbar-container {
+  container-type: inline-size;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .navbar-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.navbar-logo-img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo-img:hover {
+  transform: rotate(180deg);
+}
+
+.navbar-logo {
+  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.navbar-logo-text {
+  color: hsl(var(--foreground));
+}
+
+.navbar-logo-dot {
+  color: hsl(var(--primary));
+}
+
+.navbar-desktop {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.navbar-link {
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  text-transform: lowercase;
+  color: hsl(var(--muted-foreground));
+  transition: color 0.3s;
+  position: relative;
+}
+
+.navbar-link:hover {
+  color: hsl(var(--foreground));
+}
+
+.navbar-link-underline {
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: hsl(var(--primary));
+  transition: width 0.3s;
+}
+
+.navbar-link:hover .navbar-link-underline {
+  width: 100%;
+}
+
+.navbar-about-btn {
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  text-transform: lowercase;
+  color: hsl(var(--foreground));
+  padding: 0.5rem 1.5rem;
+  border: 1px solid hsl(var(--primary) / 0.3);
+  transition: all 0.3s;
+}
+
+.navbar-about-btn:hover {
+  border-color: hsl(var(--primary));
+}
+
+.navbar-mobile-toggle {
+  color: hsl(var(--foreground));
+  z-index: 60;
+}
+
+.navbar-mobile-toggle:focus {
+  outline: none;
+}
+
+.navbar-mobile-toggle-lines {
+  width: 1.5rem;
+  height: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar-mobile-toggle-line {
+  width: 100%;
+  height: 1px;
+  background: hsl(var(--foreground));
+  transition: all 0.3s;
+}
+
+.navbar-mobile-toggle-line-1.open {
+  transform: rotate(45deg) translateY(0.5rem);
+}
+
+.navbar-mobile-toggle-line-2.open {
+  opacity: 0;
+}
+
+.navbar-mobile-toggle-line-3.open {
+  transform: rotate(-45deg) translateY(-0.5rem);
+}
+
+.navbar-mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: hsl(var(--background) / 0.98);
+  backdrop-filter: blur(20px);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade-in 0.3s ease-out;
+}
+
+.navbar-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.navbar-mobile-link {
+  font-size: 1.875rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: lowercase;
+  color: hsl(var(--foreground));
+  transition: color 0.3s;
+}
+
+.navbar-mobile-link:hover {
+  color: hsl(var(--primary));
+}
+
+.navbar-mobile-about {
+  font-size: 1.875rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: lowercase;
+  color: hsl(var(--primary));
+  transition: color 0.3s;
+}

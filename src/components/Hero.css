@@ -1,0 +1,259 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
+  background: hsl(var(--background));
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+}
+
+.hero-gradient-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, hsl(260 70% 65% / 0.1), transparent, hsl(280 60% 70% / 0.1));
+}
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  transition: transform 0.1s ease-out;
+}
+
+.hero-particle-1 {
+  top: 5rem;
+  right: 25%;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: hsl(var(--primary));
+  opacity: 0.6;
+}
+
+.hero-particle-2 {
+  bottom: 33.333%;
+  left: 25%;
+  width: 0.25rem;
+  height: 0.25rem;
+  background: hsl(var(--accent));
+  opacity: 0.4;
+}
+
+.hero-particle-3 {
+  top: 50%;
+  right: 33.333%;
+  width: 0.375rem;
+  height: 0.375rem;
+  background: hsl(260 70% 65% / 0.7);
+  opacity: 0.5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-subtitle {
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: all 1s;
+  font-size: 0.875rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+.hero-subtitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 200ms;
+}
+
+.hero-subtitle.hidden {
+  opacity: 0;
+  transform: translateY(2.5rem);
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 0.9;
+  margin-bottom: 3rem;
+}
+
+.hero-title-line {
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.hero-title-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-title-line.hidden {
+  opacity: 0;
+  transform: translateY(5rem);
+}
+
+.hero-title-line-1 {
+  transition-delay: 300ms;
+}
+
+.hero-title-line-2 {
+  transition-delay: 500ms;
+}
+
+.hero-title-text {
+  display: block;
+  font-size: 3.5rem;
+  color: hsl(var(--foreground));
+}
+
+@media (min-width: 768px) {
+  .hero-title-text {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title-text {
+    font-size: 9rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-title-text {
+    font-size: 11rem;
+  }
+}
+
+.hero-cta-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-cta-section {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.hero-description {
+  max-width: 28rem;
+  transition: all 1s;
+  transition-delay: 700ms;
+}
+
+.hero-description.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-description.hidden {
+  opacity: 0;
+  transform: translateY(2.5rem);
+}
+
+.hero-description-main {
+  font-size: 1.125rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-description-main {
+    font-size: 1.25rem;
+  }
+}
+
+.hero-description-sub {
+  font-size: 1rem;
+  color: hsl(var(--muted-foreground) / 0.7);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 1s;
+  transition-delay: 900ms;
+}
+
+@media (min-width: 640px) {
+  .hero-buttons {
+    flex-direction: row;
+  }
+}
+
+.hero-buttons.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-buttons.hidden {
+  opacity: 0;
+  transform: translateY(2.5rem);
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 1s;
+  transition-delay: 1000ms;
+}
+
+.hero-scroll-indicator.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.hero-scroll-indicator.hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(2.5rem);
+}
+
+.hero-scroll-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 4rem;
+  background: linear-gradient(to bottom, hsl(var(--primary)), transparent);
+}
+
+.hero-scroll-text {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}

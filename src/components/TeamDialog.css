@@ -1,0 +1,183 @@
+.team-dialog-content {
+  max-width: 96rem;
+  background: hsl(var(--background) / 0.98);
+  backdrop-filter: blur(24px);
+  border: 1px solid hsl(var(--primary) / 0.1);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.team-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: hsl(var(--background) / 0.95);
+  backdrop-filter: blur(4px);
+  z-index: -10;
+}
+
+.team-dialog-title {
+  font-size: 3rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.team-dialog-title-line {
+  display: block;
+}
+
+.team-dialog-title-line-1 {
+  color: hsl(var(--foreground));
+}
+
+.team-dialog-description {
+  color: hsl(var(--muted-foreground));
+  font-size: 1.125rem;
+  letter-spacing: 0.025em;
+}
+
+.team-dialog-body {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.team-dialog-member {
+  border-top: 1px solid hsl(var(--primary) / 0.1);
+  padding-top: 2rem;
+}
+
+.team-dialog-member-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .team-dialog-member-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.team-dialog-member-aside {
+  grid-column: span 1 / span 1;
+}
+
+.team-dialog-member-image-wrapper {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.team-dialog-member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.5s;
+}
+
+.team-dialog-member-image:hover {
+  filter: grayscale(0%);
+}
+
+.team-dialog-member-role {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.5rem;
+}
+
+.team-dialog-member-name {
+  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin-bottom: 1rem;
+}
+
+.team-dialog-member-link {
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: hsl(var(--foreground));
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.team-dialog-member-link:hover {
+  color: hsl(var(--primary));
+}
+
+.team-dialog-member-link-line {
+  width: 1.5rem;
+  height: 1px;
+  background: hsl(var(--primary));
+  transition: width 0.3s;
+}
+
+.team-dialog-member-link:hover .team-dialog-member-link-line {
+  width: 2.5rem;
+}
+
+.team-dialog-member-main {
+  grid-column: span 3 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.team-dialog-member-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-dialog-member-section-title {
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.75rem;
+}
+
+.team-dialog-member-description {
+  color: hsl(var(--foreground) / 0.8);
+  line-height: 1.75;
+  font-size: 1.125rem;
+}
+
+.team-dialog-member-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.team-dialog-member-skill {
+  font-size: 0.75rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border: 1px solid hsl(var(--primary) / 0.2);
+  color: hsl(var(--foreground));
+}
+
+.team-dialog-member-projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.team-dialog-member-project {
+  font-size: 0.75rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  background: hsl(var(--primary) / 0.1);
+  color: hsl(var(--foreground));
+}
