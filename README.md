@@ -3,13 +3,13 @@
 ## pasos para instalar el proyecto
 
 ```sh
-# clonar url del repo
-git clone <YOUR_GIT_URL>
+# Clonar url del repo
+git clone https://github.com/Edgar-feacst/remix-of-studio-aura-design.git
 
-# moverse a la carpeta del repo.
-cd <YOUR_PROJECT_NAME>
+# Moverse a la carpeta del repo.
+cd remix-of-studio-aura-design
 
-# instalar dependencias.
+# Instalar dependencias.
 npm i
 
 # Ejecutar el proyecto
