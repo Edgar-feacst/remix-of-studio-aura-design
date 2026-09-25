@@ -1,4 +1,5 @@
 # Welcome to Feac Studio Proyect
+----
 
 ## pasos para instalar el proyecto
 
@@ -15,3 +16,4 @@ npm i
 # Ejecutar el proyecto
 npm run dev
 ```
+----
